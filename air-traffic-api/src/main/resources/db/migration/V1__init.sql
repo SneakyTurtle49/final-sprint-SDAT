@@ -1,0 +1,24 @@
+
+CREATE TABLE IF NOT EXISTS city (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(120) NOT NULL,
+    country VARCHAR(120) NOT NULL
+);
+CREATE TABLE IF NOT EXISTS airport (
+    id SERIAL PRIMARY KEY,
+    code VARCHAR(10) NOT NULL,
+    name VARCHAR(200) NOT NULL,
+    city_id BIGINT NOT NULL REFERENCES city(id)
+);
+CREATE TABLE IF NOT EXISTS passenger (
+    id SERIAL PRIMARY KEY,
+    first_name VARCHAR(120) NOT NULL,
+    last_name VARCHAR(120) NOT NULL,
+    email VARCHAR(200) UNIQUE
+);
+CREATE TABLE IF NOT EXISTS aircraft (
+    id SERIAL PRIMARY KEY,
+    model VARCHAR(120) NOT NULL,
+    manufacturer VARCHAR(120) NOT NULL,
+    capacity INT
+);

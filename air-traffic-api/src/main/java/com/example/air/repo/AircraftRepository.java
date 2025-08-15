@@ -1,0 +1,1 @@
+package com.example.air.repo; import com.example.air.domain.Aircraft; import org.springframework.data.jpa.repository.JpaRepository; public interface AircraftRepository extends JpaRepository<Aircraft,Long>{} 
